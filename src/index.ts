@@ -42,7 +42,7 @@ const you: {
 }
 
 
-let properties: {
+const properties: {
     image: string, 
     title: string, 
     pricePerNight: number,
