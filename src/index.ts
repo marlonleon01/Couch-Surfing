@@ -1,6 +1,8 @@
 import {totalReviews, populateUser} from "./utils"
 let isOpen: boolean
 
+const propertiesEl = document.querySelector(".properties") as HTMLElement
+
 const reviews: {
     name: string, 
     stars: number, 
@@ -56,45 +58,56 @@ const properties: {
     availability: boolean 
 }[]  = [
     {
-        image: "",
-        title: "Penthouse Miami Beach Apartment",
-        pricePerNight: 200,
+        image: './images/colombia-property.jpg',
+        title: 'Colombian Shack',
+        pricePerNight: 45,
         location: {
-            firstLineAddress: "20 Collins Ave",
-            city: "Miami",
-            zipCode: 33175,
-            country: "USA",
+            firstLineAddress: 'shack 37',
+            city: 'Bogota',
+            zipCode: 45632,
+            country: 'Colombia'
         },
-        contactDetails: "randomemail@gmail.com",
-        availability: true
+        contactDetails: 'marywinkle@gmail.com',
+        availability: true  
     },
     {
-        image: "",
-        title: "Lake Cabin",
-        pricePerNight: 100,
+        image: './images/poland-property.jpg',
+        title: 'Polish Cottage',
+        pricePerNight: 34,
         location: {
-            firstLineAddress: "3344 Ozark Ave",
-            city: "Ozark",
-            zipCode: 33421,
-            country: "USA",
+            firstLineAddress: 'no 23',
+            city: 'Gdansk',
+            zipCode: 343903,
+            country: 'Poland'
         },
-        contactDetails: "randomemail@gmail.com",
-        availability: true
+        contactDetails: 'garydavis@hotmail.com',
+        availability: false 
     },
     {
-        image: "",
-        title: "Beach View Villa",
-        pricePerNight: 500,
+        image: './images/london-property.jpg',
+        title: 'London Flat',
+        pricePerNight: 23,
         location: {
-            firstLineAddress: "1024 Ave",
-            city: "Hallandale",
-            zipCode: 46939,
-            country: "USA",
+            firstLineAddress: 'flat 15',
+            city: 'London',
+            zipCode: 35433,
+            country: 'United Kingdom',
         },
-        contactDetails: "randomemail@gmail.com",
+        contactDetails: 'andyluger@aol.com',
         availability: true
     }
 ]
+
+function populateProperties() {
+    properties.map(property => {
+        propertiesEl.innerHTML += `
+                <img src="${property.image}">
+                <h1>${property.title}</h1>
+            `
+    })
+}
+
+populateProperties()
 
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
