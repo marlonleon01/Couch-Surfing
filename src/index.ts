@@ -112,6 +112,11 @@ function populateProperties() {
     })
 }
 
+const footer = document.querySelector(".footer") as HTMLElement
+let currentLocation: [string, string, number] = ["Miami", "3:00", 28] 
+
+footer.innerHTML = currentLocation.toString()
+
 populateProperties()
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
