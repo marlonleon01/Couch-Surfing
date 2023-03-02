@@ -52,7 +52,7 @@ const properties: {
         zipCode: number,
         country: string,
     }
-    contactDetails: string,
+    contactDetails: [number, string],
     availability: boolean 
 }[]  = [
     {
@@ -65,7 +65,7 @@ const properties: {
             zipCode: 45632,
             country: 'Colombia'
         },
-        contactDetails: 'marywinkle@gmail.com',
+        contactDetails: [+1123495082908, 'marywinkle@gmail.com'],
         availability: true  
     },
     {
@@ -78,7 +78,7 @@ const properties: {
             zipCode: 343903,
             country: 'Poland'
         },
-        contactDetails: 'garydavis@hotmail.com',
+        contactDetails: [+1123495082908, 'garydavis@hotmail.com'],
         availability: false 
     },
     {
@@ -91,7 +91,7 @@ const properties: {
             zipCode: 35433,
             country: 'United Kingdom',
         },
-        contactDetails: 'andyluger@aol.com',
+        contactDetails: [ +1123495082908, 'andyluger@aol.com'],
         availability: true
     }
 ]
@@ -107,7 +107,7 @@ function populateProperties() {
         const image = document.createElement('img')
         image.setAttribute('src', property.image)
         card.appendChild(image)
-        
+
         propertiesContainer.appendChild(card)
     })
 }
