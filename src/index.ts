@@ -1,8 +1,6 @@
 import {totalReviews, populateUser} from "./utils"
 let isOpen: boolean
 
-const propertiesContainer = document.querySelector(".properties") as HTMLElement
-
 const reviews: {
     name: string, 
     stars: number, 
@@ -99,18 +97,21 @@ const properties: {
 ]
 
 function populateProperties() {
+    const propertiesContainer = document.querySelector(".properties") as HTMLElement
+
     properties.map(property => {
         const card = document.createElement('div')
         card.classList.add('card')
         card.innerHTML = property.title
+
         const image = document.createElement('img')
         image.setAttribute('src', property.image)
         card.appendChild(image)
+        
         propertiesContainer.appendChild(card)
     })
 }
 
 populateProperties()
-
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
