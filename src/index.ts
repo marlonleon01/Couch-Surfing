@@ -42,5 +42,59 @@ const you: {
 }
 
 
+let properties: {
+    image: string, 
+    title: string, 
+    pricePerNight: number,
+    location: {
+        firstLineAddress: string,
+        city: string,
+        zipCode: number,
+        country: string,
+    }
+    contactDetails: string,
+    availability: boolean 
+}[]  = [
+    {
+        image: "",
+        title: "Penthouse Miami Beach Apartment",
+        pricePerNight: 200,
+        location: {
+            firstLineAddress: "20 Collins Ave",
+            city: "Miami",
+            zipCode: 33175,
+            country: "USA",
+        },
+        contactDetails: "randomemail@gmail.com",
+        availability: true
+    },
+    {
+        image: "",
+        title: "Lake Cabin",
+        pricePerNight: 100,
+        location: {
+            firstLineAddress: "3344 Ozark Ave",
+            city: "Ozark",
+            zipCode: 33421,
+            country: "USA",
+        },
+        contactDetails: "randomemail@gmail.com",
+        availability: true
+    },
+    {
+        image: "",
+        title: "Beach View Villa",
+        pricePerNight: 500,
+        location: {
+            firstLineAddress: "1024 Ave",
+            city: "Hallandale",
+            zipCode: 46939,
+            country: "USA",
+        },
+        contactDetails: "randomemail@gmail.com",
+        availability: true
+    }
+]
+
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
