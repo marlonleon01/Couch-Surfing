@@ -1,46 +1,41 @@
 import {totalReviews, populateUser} from "./utils"
+import { Permissions, LoyaltyUser } from "./enums"
 let isOpen: boolean
 
-const reviews: {
-    name: string, 
-    stars: number, 
-    loyaltyUser: boolean, 
+const reviews: { 
+    name: string; 
+    stars: number; 
+    loyaltyUser: LoyaltyUser; 
     date: string
-}[] = [
+    }[] = [
     {
         name: 'Sheia',
         stars: 5,
-        loyaltyUser: true,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
         date: '01-04-2021'
     },
     {
         name: 'Andrzej',
         stars: 3,
-        loyaltyUser: false,
+        loyaltyUser: LoyaltyUser.SILVER_USER,
         date: '28-03-2021'
     },
     {
         name: 'Omar',
         stars: 4,
-        loyaltyUser: true,
+        loyaltyUser: LoyaltyUser.BRONZE_USER,
         date: '27-03-2021'
     }
 ]
 
-const you: {
-    firstName: string, 
-    lastName: string, 
-    isReturning: boolean, 
-    age: number,
-    stayedAt: string[]
-} = {
+const you = {
     firstName: "Bobby",
     lastName: "Brown",
+    permissions: Permissions.ADMIN,
     isReturning: true,
     age: 23,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
-
 
 const properties: {
     image: string, 
