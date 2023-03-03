@@ -1,6 +1,5 @@
 import {totalReviews, populateUser} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
-let isOpen: boolean
 
 const reviews: (
 {
@@ -101,20 +100,30 @@ const properties: {
     }
 ]
 
-function populateProperties() {
-    const propertiesContainer = document.querySelector(".properties") as HTMLElement
+let authorityStatus : any
+let isLoggedIn = true
 
-    properties.map(property => {
-        const card = document.createElement('div')
-        card.classList.add('card')
-        card.innerHTML = property.title
+function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}
 
-        const image = document.createElement('img')
-        image.setAttribute('src', property.image)
-        card.appendChild(image)
+const propertiesContainer = document.querySelector(".properties") as HTMLElement
 
-        propertiesContainer.appendChild(card)
-    })
+for (let i = 0; i < properties.length; i++) {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+
+    const image = document.createElement('img')
+    image.setAttribute('src', properties[i].image)
+    card.appendChild(image)
+
+    propertiesContainer.appendChild(card)
+    showDetails(isLoggedIn, card, properties[i].pricePerNight)
 }
 
 const footer = document.querySelector(".footer") as HTMLElement
@@ -122,6 +131,5 @@ let currentLocation: [string, string, number] = ["Miami", "3:00", 28]
 
 footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`
 
-populateProperties()
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
