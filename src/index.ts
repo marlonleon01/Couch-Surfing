@@ -129,12 +129,18 @@ class MainProperty {
         this.src = src
         this.title = title
     }
-}
+} 
 
-let mainImg = "./images/italian-property.jpg"
-let title = "Italian House"
-
-let yourMainProperty = new MainProperty(reviews, mainImg, title)
+let yourMainProperty = new MainProperty(
+    [{
+        name: 'Olive',
+        stars: 5,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
+        date: '12-04-2021'
+    }], 
+    "./images/italian-property.jpg", 
+    "Italian House"
+    )
 
 const mainImageContainer = document.querySelector(".main-image") as HTMLElement
 const image = document.createElement("img")
