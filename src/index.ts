@@ -1,4 +1,4 @@
-import {totalReviews, populateUser} from "./utils"
+import {totalReviews, populateUser, showDetails} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
 import {Price, Country} from "./types"
 
@@ -103,14 +103,6 @@ const properties: {
 
 let authorityStatus : any
 let isLoggedIn = true
-
-function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
-   if (authorityStatus) {
-       const priceDisplay = document.createElement('div')
-       priceDisplay.innerHTML = price.toString() + '/night'
-       element.appendChild(priceDisplay)
-   }
-}
 
 const propertiesContainer = document.querySelector(".properties") as HTMLElement
 
