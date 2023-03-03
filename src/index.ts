@@ -80,7 +80,7 @@ const properties: Property[]  = [
         isAvailable: true
     },
     {
-        image: './images/london-property.jpg',
+        image: './images/malaysian-hotel.jpeg',
         title: 'Malia Hotel',
         price: 35,
         location: {
