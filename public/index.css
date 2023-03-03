@@ -1,14 +1,7 @@
-html {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-}
-
 body {
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial;
   color: darkgrey;
   flex-direction: column;
@@ -63,4 +56,19 @@ body {
   text-align: center;
   padding: 30px;
   color: white;
+}
+
+.review-card {
+  padding: 10px;
+}
+
+.reviews {
+  display: flex;
+  padding: 10px;
+}
+
+.break {
+  height: 1px;
+  width: 90%;
+  background-color: coral;
 }
