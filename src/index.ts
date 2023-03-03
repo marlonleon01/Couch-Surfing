@@ -132,7 +132,7 @@ class MainProperty {
 }
 
 let mainImg = "./images/italian-property.jpg"
-let title = "Italian Property"
+let title = "Italian House"
 
 let yourMainProperty = new MainProperty(reviews, mainImg, title)
 
