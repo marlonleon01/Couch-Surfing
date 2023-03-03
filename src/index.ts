@@ -46,15 +46,18 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+type Price = 45 | 34 | 25
+type Country = "Colombia" | "Poland" | "United Kingdom"
+
 const properties: {
     image: string, 
     title: string, 
-    pricePerNight: number,
+    pricePerNight: Price,
     location: {
         firstLineAddress: string,
         city: string,
         zipCode: number,
-        country: string,
+        country: Country,
     }
     contactDetails: [number, string],
     availability: boolean 
@@ -88,7 +91,7 @@ const properties: {
     {
         image: './images/london-property.jpg',
         title: 'London Flat',
-        pricePerNight: 23,
+        pricePerNight: 25,
         location: {
             firstLineAddress: 'flat 15',
             city: 'London',
