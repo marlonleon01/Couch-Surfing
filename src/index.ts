@@ -3,6 +3,12 @@ import { Permissions, LoyaltyUser } from "./enums"
 import {Price, Country} from "./types"
 import type { Review } from "./inerfaces"
 
+const propertiesContainer = document.querySelector(".properties") as HTMLElement
+const button = document.querySelector('button') as HTMLElement
+const container = document.querySelector('.container') as HTMLElement
+const reviewContainer = document.querySelector('.reviews') as HTMLElement
+const footer = document.querySelector(".footer") as HTMLElement
+
 const reviews: Review[] = [
     {
         name: 'Sheia',
@@ -90,8 +96,6 @@ const properties: {
 let authorityStatus : any
 let isLoggedIn = true
 
-const propertiesContainer = document.querySelector(".properties") as HTMLElement
-
 for (let i = 0; i < properties.length; i++) {
     const card = document.createElement('div')
     card.classList.add('card')
@@ -106,9 +110,6 @@ for (let i = 0; i < properties.length; i++) {
 }
 
 let count = 0
-const button = document.querySelector('button') as HTMLElement
-const container = document.querySelector('.container') as HTMLElement
-const reviewContainer = document.querySelector('.reviews') as HTMLElement
 
 function addReviews(array: Review[]): void {
     if (!count ) {
@@ -125,10 +126,19 @@ function addReviews(array: Review[]): void {
 }
 
 button.addEventListener('click', () => addReviews(reviews))
-
-const footer = document.querySelector(".footer") as HTMLElement
 let currentLocation: [string, string, number] = ["Miami", "3:00", 28] 
 footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`
 
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.firstName)
+
+class MainImg {
+    reviews: Review[]
+    src: string
+    title: string
+    constructor(reviews: Review[], src: string, title: string,) {
+        this.reviews = reviews
+        this.src = src
+        this.title = title
+    }
+}
