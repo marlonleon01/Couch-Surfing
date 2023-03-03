@@ -1,5 +1,5 @@
 import { LoyaltyUser } from "./enums"
-import type { Review } from "./inerfaces"
+import type { Review } from "./interface"
 
 const reviewTotalDisplay = document.querySelector('#reviews') as HTMLElement
 const returningUserDisplay = document.querySelector('#returning-user') as HTMLElement
