@@ -8,7 +8,8 @@ export function totalReviews(value: number, reviewer: string, isLoyalUser: Loyal
     const iconDisplay = LoyaltyUser.GOLD_USER ? "⭐" : ""
 
     reviewTotalDisplay.innerHTML = `
-            review total ${value.toString()}| last reviewed by ${reviewer}${iconDisplay}
+            ${value.toString()} Review${makeMultiple(value)}| last reviewed by 
+            ${reviewer}${iconDisplay}
         ` 
 }
 
@@ -19,3 +20,17 @@ export function populateUser(isReturning: boolean, userName: string) {
 
     userNameDisplay.innerHTML = userName
 }
+
+export function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+    if (authorityStatus) {
+        const priceDisplay = document.createElement('div')
+        priceDisplay.innerHTML = price.toString() + '/night'
+        element.appendChild(priceDisplay)
+    }
+ }
+
+ export function makeMultiple(value: number): string {
+    if (value > 1 || value == 0) {
+        return "s"
+    } else return ""
+ }
