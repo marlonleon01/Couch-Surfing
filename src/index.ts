@@ -2,21 +2,14 @@ import {totalReviews, populateUser, showDetails, getTopTwoReviews} from "./utils
 import { Permissions, LoyaltyUser } from "./enums"
 import {Price, Country} from "./types"
 
-const reviews: (
-{
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string; 
-} |
-{
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string;
-    description: string;
+export interface Review {
+    name: string,
+    stars: number,
+    loyaltyUser: LoyaltyUser,
+    date: string
 }
-)[] = [
+
+const reviews: Review[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -33,8 +26,7 @@ const reviews: (
         name: 'Omar',
         stars: 4,
         loyaltyUser: LoyaltyUser.BRONZE_USER,
-        date: '27-03-2021',
-        description: "Great hosts"
+        date: '27-03-2021'
     }
 ]
 
@@ -124,12 +116,7 @@ const button = document.querySelector('button') as HTMLElement
 const container = document.querySelector('.container') as HTMLElement
 const reviewContainer = document.querySelector('.reviews') as HTMLElement
 
-function addReviews(array: {
-    name: string,
-    stars: number,
-    loyaltyUser: LoyaltyUser,
-    date: string
-}[]): void {
+function addReviews(array: Review[]): void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
