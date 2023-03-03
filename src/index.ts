@@ -1,13 +1,7 @@
 import {totalReviews, populateUser, showDetails, getTopTwoReviews} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
 import {Price, Country} from "./types"
-
-export interface Review {
-    name: string,
-    stars: number,
-    loyaltyUser: LoyaltyUser,
-    date: string
-}
+import type { Review } from "./inerfaces"
 
 const reviews: Review[] = [
     {
