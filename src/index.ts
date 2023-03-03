@@ -2,12 +2,21 @@ import {totalReviews, populateUser} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
 let isOpen: boolean
 
-const reviews: { 
-    name: string; 
-    stars: number; 
-    loyaltyUser: LoyaltyUser; 
-    date: string
-    }[] = [
+const reviews: (
+{
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string; 
+} |
+{
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;
+    description: string;
+}
+)[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -24,7 +33,8 @@ const reviews: {
         name: 'Omar',
         stars: 4,
         loyaltyUser: LoyaltyUser.BRONZE_USER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: "Great hosts"
     }
 ]
 
