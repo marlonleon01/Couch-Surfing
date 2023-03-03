@@ -1,5 +1,6 @@
 import {totalReviews, populateUser} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
+import {Price, Country} from "./types"
 
 const reviews: (
 {
@@ -46,18 +47,15 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-type Price = 45 | 34 | 25
-type Country = "Colombia" | "Poland" | "United Kingdom"
-
 const properties: {
     image: string, 
     title: string, 
-    pricePerNight: Price,
+    pricePerNight: number,
     location: {
         firstLineAddress: string,
         city: string,
         zipCode: number,
-        country: Country,
+        country: string,
     }
     contactDetails: [number, string],
     availability: boolean 
