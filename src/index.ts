@@ -1,4 +1,4 @@
-import {totalReviews, populateUser, showDetails} from "./utils"
+import {totalReviews, populateUser, showDetails, getTopTwoReviews} from "./utils"
 import { Permissions, LoyaltyUser } from "./enums"
 import {Price, Country} from "./types"
 
@@ -119,9 +119,34 @@ for (let i = 0; i < properties.length; i++) {
     showDetails(isLoggedIn, card, properties[i].pricePerNight)
 }
 
+let count = 0
+const button = document.querySelector('button') as HTMLElement
+const container = document.querySelector('.container') as HTMLElement
+const reviewContainer = document.querySelector('.reviews') as HTMLElement
+
+function addReviews(array: {
+    name: string,
+    stars: number,
+    loyaltyUser: LoyaltyUser,
+    date: string
+}[]): void {
+    if (!count ) {
+        count++
+        const topTwo = getTopTwoReviews(array)
+        for (let i = 0; i < topTwo.length; i++) {
+            const card = document.createElement('div')
+            card.classList.add('review-card')
+            card.innerHTML = topTwo[i].stars + ' stars from ' + topTwo[i].name
+            reviewContainer.appendChild(card)
+        }
+        container.removeChild(button) 
+    }
+}
+
+button.addEventListener('click', () => addReviews(reviews))
+
 const footer = document.querySelector(".footer") as HTMLElement
 let currentLocation: [string, string, number] = ["Miami", "3:00", 28] 
-
 footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°`
 
 totalReviews(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
