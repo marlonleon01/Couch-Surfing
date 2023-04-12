@@ -1,4 +1,21 @@
-# New Project
+# TypeScript Project
+
+## Description
+-I created this while follow the typescript course on scrimba   
+-Its main purpose was to practice the fundamentals of typescript and using it to make the code safer from bugs
+-Learned how to use enums, types, utils, and more
+
+## Required Files
+-Git  
+-Node.js  
+-Npm (which should be included with your node installation)  
+-Code editor (Visual Studio Code recommended)  
+
+## Installation
+-Open terminal  
+-Clone the repo with: $ git clone {url}  
+-cd into the folder  
+-type: $ npm install  
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
