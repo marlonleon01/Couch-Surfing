@@ -3,7 +3,7 @@
 ## Description
 -I created this while follow the typescript course on scrimba   
 -Its main purpose was to practice the fundamentals of typescript and using it to make the code safer from bugs  
--Learned how to use enums, types, utils, and more
+-Learned how to use enums, types, utils, and more  
 
 ## Required Files
 -Git  
